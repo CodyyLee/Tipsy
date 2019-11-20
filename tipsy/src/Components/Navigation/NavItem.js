@@ -5,8 +5,16 @@ import {NavLink} from "react-router-dom";
 const Item = styled.div`
     
     a {
-        color: #f1d6ab;
+        color: #f8f8f8;
         text-decoration: none;
+
+        &:hover {
+            color: #e3b04b;
+        }
+
+        @media (min-width: 767px) {
+            font-size: 1.5rem;
+        }
     }
 `
 

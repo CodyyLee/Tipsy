@@ -3,19 +3,27 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 
 const Head = styled.div`
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    padding: 2.5%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: rgba(0,0,0, 0.5);
+    margin-bottom: 20px;
+
+    @media (min-width: 1199px) {
+        width: 35%;
+    }
 `
 
 const Title = styled.h1`
     text-align: center;
-    color: #f1d6ab;
+    color: #f8f8f8;
     width: 90%;
+
+    @media (min-width: 767px) {
+        font-size: 3rem;
+    }
 `
 
 const Button = styled.button`
@@ -25,13 +33,22 @@ const Button = styled.button`
     font-size: 1.5rem;
     border: 1px solid #2b2b28;
     border-radius: 10px;
+
+    &:hover {
+        background-color: #f8f8f8;
+        color: #2b2b28;
+    }
+`
+
+const Span = styled.span`
+    color: #e3b04b;
 `
 
 export default function Heading() {
 
     return (
         <Head>
-            <Title>Discover The World Of Tipsy</Title>
+            <Title><Span>Discover</Span> More With Tipsy</Title>
 
             <Link to="/Discover">
                 <Button>Get Tipsy</Button>

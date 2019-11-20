@@ -18,7 +18,7 @@ export default function Footer() {
 
     return (
         <Foot>
-            <p>Get Tipsy &copy;</p>
+            <p>Tipsy 2019&copy;</p>
         </Foot>
     )
 }

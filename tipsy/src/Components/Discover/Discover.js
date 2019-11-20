@@ -28,15 +28,6 @@ const Select = styled.select`
     border: 1px solid #f1d6ab;
 `
 
-const Button = styled.button`
-    background-color: #e3b04b;
-    padding: 10px 25px;
-    font-size: 1rem;
-    margin: 20px auto;
-    border-radius: 5px;
-    font-weight: bold;
-`
-
 export default function Discover() {
 
     const [ingredient, setIngredient] = useState([]);
@@ -57,7 +48,6 @@ export default function Discover() {
 
     useEffect(() => {
         axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${drinks}`).then((res) => {
-            console.log(res);
             setOptions(res.data.drinks);
         }).catch((err) => {
             console.log(err);
