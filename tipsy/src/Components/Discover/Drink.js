@@ -21,6 +21,15 @@ const SubTitle = styled.h2`
 
 const Ingredients = styled.ul`
     list-decoration: none;
+    width: 50%;
+    margin: auto;
+`
+
+const Instructions = styled.p`
+    text-align: center;
+    width: 90%;
+    padding: 2.5%;
+    margin: auto;
 `
 
 export default function Drink(props) {
@@ -38,17 +47,10 @@ export default function Drink(props) {
     }, [])
 
     useEffect(() => {
-        for(let i=1;i<16;i++) {
-            console.log(drink["strIngredient" +i])
-            setItems([...items, drink["strIngredient" + i]])
-        }
+        setItems(Object.keys(drink).filter(key => key.startsWith("strIngredient")).map((value => drink[value])))
 
-        console.log(items)
+        setAmount(Object.keys(drink).filter(key => key.startsWith("strMeasure")).map((value => drink[value])))
     }, [drink])
-
-    const clicked = () => {
-        console.log(items);
-    }
 
     return(
         <>
@@ -60,16 +62,18 @@ export default function Drink(props) {
 
                 <SubTitle>Ingredients</SubTitle>
                 <Ingredients>
-                    {/* {items.map((item, index) => {
-                        if(item === "null") {
+                    {items.map((item, index) => {
+                        if(item === null) {
                             return
                         }
                         else{
-                            return <li>{item}</li>
+                            return <li key={index}><b>{amount[index]}</b> {item}</li>
                         }
-                    })} */}
+                    })}
                 </Ingredients>
-                <button onClick={clicked}>Click</button>
+
+                <SubTitle>Preperation</SubTitle>
+                <Instructions>{drink.strInstructions}</Instructions>
             </Container>
         </>
     )
