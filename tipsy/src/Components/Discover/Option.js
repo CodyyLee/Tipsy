@@ -7,7 +7,12 @@ const Item = styled.div`
     height: 250px;
     border-radius: 5px;
     margin: 20px auto;
-    background-color: #f1d6ab;
+    background-color: #e3b04b;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: .3s;
+    }
 
     a {
         text-decoration: none;
@@ -26,6 +31,7 @@ const Name = styled.p`
     position: relative;
     top: 0;
     margin: 0;
+    color: #f8f8f8;
 `
 
 export default function Option(props) {

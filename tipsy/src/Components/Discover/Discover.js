@@ -13,19 +13,46 @@ const Container = styled.div`
     align-items: center;
     background-color: #f8f8f8;
     flex-direction: column;
+    background-color: rgba(0,0,0,0.75);
+
+    @media(min-width: 767px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
 `
 
 const Title = styled.h2`
     font-size: 2rem;
     font-weight: bold;
-    color: #2b2b28;
+    color: #f8f8f8;
     text-align: center;
+
+    @media(min-width: 767px) {
+        font-size: 2.5rem;
+    }
+
+    @media(min-width: 1199px) {
+        font-size: 3.5rem;
+    }
 `
 
 const Select = styled.select`
     padding: 5px;
     border-radius: 3px;
     border: 1px solid #f1d6ab;
+`
+
+const Span = styled.span`
+    color: #e3b04b;
+`
+
+const Section = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 `
 
 export default function Discover() {
@@ -57,12 +84,15 @@ export default function Discover() {
     return (
         <>
             <Container>
-                <Title>Select Your Ingredient</Title>
-                <Select onChange={changeHandler}>
-                    {ingredient.map((item, index) => {
-                        return <option key={index}>{item.strIngredient1}</option>
-                    })}
-                </Select>
+                <Section>
+                    <Title><Span>Select</Span> Your Ingredient</Title>
+                    <Select onChange={changeHandler}>
+                        {ingredient.map((item, index) => {
+                            return <option key={index}>{item.strIngredient1}</option>
+                        })}
+                    </Select>
+                </Section>
+                
 
                 {options.map((drink, index) => {
                     return <Option src={drink.strDrinkThumb} name={drink.strDrink} key={index}/>
