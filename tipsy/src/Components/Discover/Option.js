@@ -31,7 +31,8 @@ const Name = styled.p`
     position: relative;
     top: 0;
     margin: 0;
-    color: #f8f8f8;
+    color: #000;
+    font-weight: bold;
 `
 
 export default function Option(props) {

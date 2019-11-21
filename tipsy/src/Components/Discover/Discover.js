@@ -41,6 +41,10 @@ const Select = styled.select`
     padding: 5px;
     border-radius: 3px;
     border: 1px solid #f1d6ab;
+    
+    @media(min-width: 767px) {
+        font-size: 1.5rem;
+    }
 `
 
 const Span = styled.span`

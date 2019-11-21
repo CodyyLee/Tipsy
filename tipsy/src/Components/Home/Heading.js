@@ -9,7 +9,18 @@ const Head = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    opacity: 0;
     margin-bottom: 20px;
+    animation-name: FadeIn;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
+
+    @keyframes FadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
 
     @media (min-width: 1199px) {
         width: 35%;
@@ -35,7 +46,7 @@ const Button = styled.button`
     border-radius: 10px;
 
     &:hover {
-        background-color: #f8f8f8;
+        background-color: #f1d6ab;
         color: #2b2b28;
     }
 `
